@@ -52,7 +52,7 @@ print("complete")
 """
 
 # 재변경 예외처리
-
+"""
 import os
 
 fp = "new.txt"
@@ -68,3 +68,39 @@ if os.path.exists(tp) :
 else :
     os.rename(fp, "new1.txt")
     print("complete")
+"""
+"""
+import os
+
+def dir_print(p) :
+	files = os.listdir(p)
+	for f in files :
+		print(f)
+
+fp = "new.txt"
+tp = "new1.txt"
+
+f = open(fp,"w")
+f.close()
+
+dir_print("./")
+print("\n===================================")
+if os.path.exists(tp) :
+    os.remove(tp)
+    dir_print("./")
+    print("exist, same name file")
+    
+else :
+    os.rename(fp, "new1.txt")
+    dir_print("./")
+    print("complete")
+"""
+
+# with
+
+with open("temp.txt", "r") as f :
+    print(f.read())
+    
+    # for i range(110) :
+    #     res = f.readline()
+    #     print(res)
